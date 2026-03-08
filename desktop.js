@@ -100,13 +100,14 @@ async function buildDesktopClient(version, { stage, host, platform, architecture
 		version,
 		platform: platform,
 		architecture,
-		updateUrl: customDesktopRelease ? "" : updateUrl,
+		updateUrl: updateUrl,
 		nameSuffix: "",
 		notarize: !customDesktopRelease,
 		outDir: outDir,
 		unpacked: unpacked,
 		disableMinify,
 		networkDebugging: false,
+		publishIntent: customDesktopRelease ? "never" : "always",
 	}
 
 	if (stage === "release") {

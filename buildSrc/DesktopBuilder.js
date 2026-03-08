@@ -47,6 +47,7 @@ export async function buildDesktop({
 	unpacked,
 	disableMinify,
 	networkDebugging,
+	publishIntent,
 }) {
 	// The idea is that we
 	// - build desktop code into build/desktop
@@ -112,7 +113,7 @@ export async function buildDesktop({
 		win: platform === "win32" ? [] : undefined,
 		mac: platform === "darwin" ? [] : undefined,
 		linux: platform === "linux" ? [] : undefined,
-		publish: "always",
+		publish: publishIntent,
 		project: distDir,
 	})
 	console.log("Move output to ", outDir)
